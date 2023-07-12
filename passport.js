@@ -8,8 +8,8 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 passport.use(
   new FacebookStrategy(
     {
-      clientID: facebook_app_id,
-      clientSecret: facebook_app_secret,
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
       callbackURL: "http://localhost:5000/auth/facebook/callback",
       passReqToCallback: true,
     },
@@ -22,8 +22,8 @@ passport.use(
 passport.use(
   new GoogleStrategy(
     {
-      clientID: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "http://localhost:5000/auth/google/callback",
       passReqToCallback: true,
     },
